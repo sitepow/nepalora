@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Navbar } from "./Navbar";
 
-export function Layout({ children }: PropsWithChildren) {
+export function MainLayout({ children }: PropsWithChildren) {
   return (
     <div className="flex flex-col">
       <Navbar />

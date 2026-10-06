@@ -1,10 +1,10 @@
-import { Layout } from "./_components/layout/Layout";
+import { MainLayout } from "./_components/layout/MainLayout";
 import { HeroSection } from "./_components/section/HeroSection";
 
 export default function Home() {
   return (
-    <Layout>
+    <MainLayout>
       <HeroSection />
-    </Layout>
+    </MainLayout>
   );
 }
