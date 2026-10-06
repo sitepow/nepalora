@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev:next": "pnpm --filter next-fullstack dev",
+    "build:next": "pnpm --filter next-fullstack build",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1"
+  }
+}
