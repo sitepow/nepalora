@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 w-full p-5 text-white backdrop-blur-md">
+    <header className="fixed top-0 z-50 w-full p-5 text-white backdrop-blur-md">
       <nav aria-label="Main Navigation" className="flex w-full items-center justify-between">
         <a href="/" className="text-2xl font-semibold">
           Nepalora
