@@ -21,10 +21,10 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center text-lg">
+        <Button variant="ghost">
           <LogInIcon />
-          <Button variant="ghost">LOG IN</Button>
-        </div>
+          LOG IN
+        </Button>
       </nav>
     </header>
   );
