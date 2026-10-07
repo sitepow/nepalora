@@ -1,5 +1,5 @@
 import { MainLayout } from "./_components/layout/MainLayout";
-import { ExperienceStatsSection } from "./_components/section/ExperienceStatsSection";
+import { ExperienceStatsSection } from "./_components/section/ExperienceStatsSection/ExperienceStatsSection";
 import { ExploreSection } from "./_components/section/ExploreSection";
 import { HeroSection } from "./_components/section/HeroSection";
 import { PopularToursSection } from "./_components/section/PopularToursSection";

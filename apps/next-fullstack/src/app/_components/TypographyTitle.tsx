@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import React from "react";
+import { SectionBadge } from "./SectionBadge";
 
 interface TypographyTitleProps {
   children?: React.ReactNode;
@@ -40,9 +41,7 @@ function renderFormattedChildren(children: React.ReactNode): React.ReactNode {
 export function TypographyTitle({ children, badge, className = "" }: TypographyTitleProps) {
   return (
     <div className="flex flex-col items-center gap-5">
-      {badge && (
-        <Badge className="mr-3 bg-gray-100 px-10 py-5 align-middle text-black">{badge}</Badge>
-      )}
+      {badge && <SectionBadge>{badge}</SectionBadge>}
       <h1 className={`text-center text-7xl leading-[0.9] tracking-[-0.055em] ${className}`}>
         {renderFormattedChildren(children)}
       </h1>
