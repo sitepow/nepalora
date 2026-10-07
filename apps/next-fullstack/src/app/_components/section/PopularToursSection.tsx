@@ -4,6 +4,8 @@ import { useState } from "react";
 import { TourCard, TourCardProps } from "../TourCard";
 import { TypographyTitle } from "../TypographyTitle";
 import { CircleChevronLeft, CircleChevronRight } from "lucide-react";
+import { NavigationPrevious } from "../navigation/NavigationPrevious";
+import { NavigationNext } from "../navigation/NavigationNext";
 
 const TOUR_LISTS: TourCardProps[] = [
   {
@@ -78,7 +80,7 @@ export function PopularToursSection() {
 
   return (
     <div className="flex flex-col items-center gap-10 px-10 py-20">
-      <TypographyTitle badge="EXPERINCES" className="max-w-xl">
+      <TypographyTitle badge="You Journey" className="max-w-xl">
         Discover *Our Most Popular* Tours
       </TypographyTitle>
       {tours.length !== 0 && (
@@ -104,15 +106,11 @@ export function PopularToursSection() {
         </div>
       )}
       <div className="flex items-center justify-center gap-5">
-        <CircleChevronLeft
-          onClick={handlePrev}
-          className="size-10 cursor-pointer opacity-70 duration-300 hover:opacity-20"
-        />
+        <NavigationPrevious onClick={handlePrev} />
+
         <span className="text-2xl">View More Tours</span>
-        <CircleChevronRight
-          onClick={handleNext}
-          className="size-10 cursor-pointer opacity-70 duration-300 hover:opacity-20"
-        />
+
+        <NavigationNext onClick={handleNext} />
       </div>
     </div>
   );

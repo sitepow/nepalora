@@ -4,7 +4,7 @@ import { ExploreSection } from "./_components/section/ExploreSection";
 import { HeroSection } from "./_components/section/HeroSection";
 import { PopularToursSection } from "./_components/section/PopularToursSection";
 import { ProcessStepsSection } from "./_components/section/ProcessStepsSection/ProcessStepsSection";
-import { TestimonialsSection } from "./_components/section/TestimonialsSection";
+import { TestimonialsSection } from "./_components/section/TestimonialsSection/TestimonialsSection";
 
 export default function Home() {
   return (

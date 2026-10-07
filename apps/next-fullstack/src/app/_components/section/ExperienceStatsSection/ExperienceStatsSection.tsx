@@ -8,7 +8,7 @@ export function ExperienceStatsSection() {
   return (
     <div className="flex flex-col gap-10 px-10 py-20">
       <div className="flex justify-between">
-        <SectionBadge>ABOUT NEPAL</SectionBadge>
+        <SectionBadge>About Nepal</SectionBadge>
         <p className="max-w-2xl text-2xl font-medium">
           Nepal is more than a destination — it's a journey. From Himalayan peaks to ancient cities,
           every experience brings you closer to its nature, culture and people.
