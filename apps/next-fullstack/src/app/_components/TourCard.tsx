@@ -24,7 +24,7 @@ export function TourCard({
   return (
     <div
       className={cn(
-        "bg-red-0 flex h-120 w-[320px] flex-col justify-end rounded-4xl bg-bottom",
+        "bg-red-0 flex h-120 w-[320px] flex-col justify-end rounded-4xl bg-cover bg-bottom bg-no-repeat",
         className
       )}
       style={{ backgroundImage: `url(${imageSrc})` }}
