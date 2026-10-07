@@ -55,7 +55,7 @@ export type ProcessStep = (typeof PROCESS_STEPS_DATA)[number];
 
 export function ProcessStepsSection() {
   return (
-    <div className="flex flex-col gap-10 py-20">
+    <div className="flex flex-col gap-10 pb-20">
       <TypographyTitle badge="EXPERIENCES">Nepal, *Beyond the Ordinary*</TypographyTitle>
       <div className="flex h-72 items-center justify-center bg-[#333333] pb-10 text-center">
         <span className="max-w-3xl text-xl text-white">
