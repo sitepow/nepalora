@@ -1,27 +1,36 @@
 import { ArrowRight } from "lucide-react";
 import { TypographyTitle } from "../TypographyTitle";
 
-const EXPLORE_LINKS = [
-  { label: "Destinations", href: "#" },
-  { label: "Popular Tours", href: "#" },
-  { label: "Experiences", href: "#" },
-  { label: "Tailor-Made", href: "#" },
-  { label: "About Nepal", href: "#" },
-];
-
-const JOURNEY_LINKS = [
-  { label: "Plan Your Trip", href: "#" },
-  { label: "Travel Guide", href: "#" },
-  { label: "Best Time to Visit", href: "#" },
-  { label: "FAQ", href: "#" },
-  { label: "Contact Us", href: "#" },
-];
-
-const FOLLOW_LINKS = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Pinterest", href: "#" },
-  { label: "YouTube", href: "#" },
+const FOOTER_SECTIONS = [
+  {
+    title: "Explore",
+    links: [
+      { label: "Destinations", href: "#" },
+      { label: "Popular Tours", href: "#" },
+      { label: "Experiences", href: "#" },
+      { label: "Tailor-Made", href: "#" },
+      { label: "About Nepal", href: "#" },
+    ],
+  },
+  {
+    title: "Your journey",
+    links: [
+      { label: "Plan Your Trip", href: "#" },
+      { label: "Travel Guide", href: "#" },
+      { label: "Best Time to Visit", href: "#" },
+      { label: "FAQ", href: "#" },
+      { label: "Contact Us", href: "#" },
+    ],
+  },
+  {
+    title: "Follow us",
+    links: [
+      { label: "Instagram", href: "#" },
+      { label: "Facebook", href: "#" },
+      { label: "Pinterest", href: "#" },
+      { label: "YouTube", href: "#" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -35,17 +44,17 @@ export function Footer() {
             *Your Next* Great Story.
           </TypographyTitle>
 
-          <div className="flex w-full items-center justify-between border-b border-white/30 pb-3">
+          <div className="flex w-full items-center justify-between border-b-2 border-white/30 pb-3">
             <input
               type="email"
               placeholder="Email address"
-              className="w-full bg-transparent text-lg text-white placeholder-gray-400 outline-none"
+              className="w-full bg-transparent text-lg text-white outline-none placeholder:text-2xl placeholder:font-medium placeholder:text-white"
             />
             <button
               type="submit"
               className="group flex items-center gap-3 text-sm whitespace-nowrap text-gray-300 transition-colors hover:text-white"
             >
-              <span>join the journey</span>
+              <span className="text-lg opacity-80">join the journey</span>
               <div className="flex size-9 items-center justify-center rounded-full border border-white/30 transition-all group-hover:scale-105 group-hover:border-white">
                 <ArrowRight className="size-4" />
               </div>
@@ -53,45 +62,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-24 pt-2">
-          <div className="flex flex-col gap-5">
-            <h4 className="text-xl font-medium text-white">Explore</h4>
-            <ul className="flex flex-col gap-3 text-base text-gray-400">
-              {EXPLORE_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="transition-colors hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-5">
-            <h4 className="text-xl font-medium text-white">Your journey</h4>
-            <ul className="flex flex-col gap-3 text-base text-gray-400">
-              {JOURNEY_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="transition-colors hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-5">
-            <h4 className="text-xl font-medium text-white">Follow us</h4>
-            <ul className="flex flex-col gap-3 text-base text-gray-400">
-              {FOLLOW_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="transition-colors hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex gap-48 pt-2">
+          {FOOTER_SECTIONS.map((section) => (
+            <div key={section.title} className="flex flex-col gap-5">
+              <h4 className="text-2xl font-medium text-white">{section.title}</h4>
+              <ul className="flex flex-col gap-3">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-lg opacity-80">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
