@@ -57,7 +57,7 @@ export function TestimonialCard({ review, className, ...props }: TestimonialCard
         <div className="mt-2 flex">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-200/60 px-3 py-1.5 text-xs font-medium text-gray-700">
             Verified Traveler
-            <Image src={"/images/verify.png"} width={35} height={35} alt="" />
+            <Image src={"/images/verify.png"} width={20} height={20} alt="" />
           </span>
         </div>
       )}
