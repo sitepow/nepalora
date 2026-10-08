@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
 import React from "react";
 import { SectionBadge } from "./SectionBadge";
+import { cn } from "cn";
 
 interface TypographyTitleProps {
   children?: React.ReactNode;
@@ -42,7 +42,7 @@ export function TypographyTitle({ children, badge, className = "" }: TypographyT
   return (
     <div className="flex flex-col items-center gap-5">
       {badge && <SectionBadge>{badge}</SectionBadge>}
-      <h1 className={`text-center text-7xl leading-[0.9] tracking-[-0.055em] ${className}`}>
+      <h1 className={cn("text-center text-7xl leading-[0.9] tracking-[-0.055em]", className)}>
         {renderFormattedChildren(children)}
       </h1>
     </div>
