@@ -5,6 +5,7 @@ import { NAV_ITEMS } from "../../../../constants/navbar";
 import { LogInIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,9 +32,9 @@ export function Navbar() {
       }`}
     >
       <nav aria-label="Main Navigation" className="flex w-full items-center justify-between">
-        <a href="/" className="text-2xl font-semibold">
+        <Link href="/" className="text-2xl font-semibold">
           Nepalora
-        </a>
+        </Link>
 
         <ul className="m-0 flex list-none gap-10 p-0">
           {NAV_ITEMS.map((item) => (
@@ -45,10 +46,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <Button variant="ghost">
-          <LogInIcon />
-          LOG IN
-        </Button>
+        <Link href={"/login"}>
+          <Button variant="ghost">
+            <LogInIcon />
+            LOG IN
+          </Button>
+        </Link>
       </nav>
     </header>
   );
