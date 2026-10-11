@@ -17,25 +17,54 @@ model User {
 }
 
 model Tour {
-  id           String    @id @default(uuid())
+  id           String           @id @default(uuid())
   title        String
   description  String?
-  price        Decimal   @db.Decimal(10, 2)
+  price        Decimal          @db.Decimal(10, 2)
   durationDays Int
-  bookings     Booking[]
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  images       String[]
+  status       TourStatus       @default(DRAFT) 
+  schedules    TourSchedule[]   @relation("TourSchedules")
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+}
+
+model TourSchedule {
+  id             String             @id @default(uuid())
+  tourId         String
+  tour           Tour               @relation("TourSchedules", fields: [tourId], references: [id], onDelete: Cascade)
+  startDate      DateTime
+  endDate        DateTime
+  maxSeats       Int                
+  availableSeats Int                
+  status         ScheduleStatus     @default(OPEN) 
+  bookings       Booking[]
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
 }
 
 model Booking {
-  id        String        @id @default(uuid())
-  userId    String
-  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
-  tourId    String
-  tour      Tour          @relation(fields: [tourId], references: [id], onDelete: Cascade)
-  status    BookingStatus @default(PENDING)
-  createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt
+  id             String        @id @default(uuid())
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tourScheduleId String
+  tourSchedule   TourSchedule  @relation(fields: [tourScheduleId], references: [id], onDelete: Cascade)
+  status         BookingStatus @default(PENDING)
+  seatCount      Int           @default(1)
+  payment        Payment?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model Payment {
+  id                    String        @id @default(uuid())
+  bookingId             String        @unique
+  booking               Booking       @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  amount                Decimal       @db.Decimal(10, 2)
+  status                PaymentStatus @default(PENDING)
+  stripePaymentIntentId String?       @unique
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
 }
 
 enum Role {
@@ -43,8 +72,27 @@ enum Role {
   ADMIN
 }
 
+enum TourStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ScheduleStatus {
+  OPEN
+  FULL
+  CLOSED
+}
+
 enum BookingStatus {
   PENDING
   CONFIRMED
   CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
 }
