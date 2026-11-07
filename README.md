@@ -169,7 +169,3 @@ pnpm format
 ```
 
 ---
-
-<div align="center">
-  <sub>Built with passion for high standards in software architecture and the Himalayas.</sub>
-</div>
