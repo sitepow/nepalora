@@ -167,5 +167,3 @@ pnpm format:check
 # Auto-format all files
 pnpm format
 ```
-
----
